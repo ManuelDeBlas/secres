@@ -1,11 +1,11 @@
 package es.mde.secres;
 
-public class ActivacionAmpliada extends SolicitudImpl {
 
-  private String motivo;
 
-  public String getMotivo() {
-    return motivo;
-  }
+public interface ActivacionAmpliada extends Solicitud {
+
+  String getMotivo();
+  
+  void setMotivo(String motivo);
 
 }

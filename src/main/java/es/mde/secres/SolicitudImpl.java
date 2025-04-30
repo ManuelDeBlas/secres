@@ -5,7 +5,7 @@ import java.time.temporal.ChronoUnit;
 
 import importadores.Propiedades;
 
-public class SolicitudImpl implements Solicitud {
+public abstract class SolicitudImpl implements Solicitud {
 
   private String nombreUCO;
   private String CIU;
@@ -42,11 +42,6 @@ public class SolicitudImpl implements Solicitud {
   @Override
   public LocalDate getFechaFin() {
     return fechaFin;
-  }
-
-  @Override
-  public void CalcularCoste() {
-    // TODO
   }
 
   @Override

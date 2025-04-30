@@ -1,10 +1,9 @@
 package es.mde.secres;
 
 import java.util.Date;
+import java.util.List;
 
 public interface Reservista extends Persona {
-
-  int getId();
 
   String getDNI();
 
@@ -17,5 +16,7 @@ public interface Reservista extends Persona {
   String getLocalidadResidencia();
 
   String getSubdelegacionDefensa();
+  
+  List<Solicitud> getSolicitudes();
 
 }

@@ -1,21 +1,17 @@
 package es.mde.secres;
 
 import java.util.Date;
+import java.util.List;
 
 public class ReservistaImpl extends PersonaImpl implements Reservista {
 
-  private int id;
   private String DNI;
   private int telefonoParticular;
   private Date fechaFinCompromiso;
   private int diasConsumidos;
   private String localidadResidencia;
   private String subdelegacionDefensa;
-
-  @Override
-  public int getId() {
-    return id;
-  }
+  private List<Solicitud> solicitudes;
 
   @Override
   public String getDNI() {
@@ -45,6 +41,11 @@ public class ReservistaImpl extends PersonaImpl implements Reservista {
   @Override
   public String getSubdelegacionDefensa() {
     return subdelegacionDefensa;
+  }
+
+  @Override
+  public List<Solicitud> getSolicitudes() {
+    return solicitudes;
   }
 }
 

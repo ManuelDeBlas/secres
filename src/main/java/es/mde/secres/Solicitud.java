@@ -18,8 +18,10 @@ public interface Solicitud {
 
   LocalDate getFechaFin();
 
-  void CalcularCoste();
-
   float getCoste();
+
+  default String getTipoSolicitud() {
+    return this.getClass().getName();
+  }
 
 }

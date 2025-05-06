@@ -6,9 +6,9 @@ import java.util.Date;
 
 public interface Solicitud {
 
-  String getNombreUCO();
+  String getNombreUco();
 
-  String getCIU();
+  String getCiu();
 
   String getSituacion();
 
@@ -17,6 +17,10 @@ public interface Solicitud {
   LocalDate getFechaInicio();
 
   LocalDate getFechaFin();
+  
+  Expediente getExpediente();
+  
+  void setExpediente(Expediente expediente);
 
   float getCoste();
 

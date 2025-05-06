@@ -1,7 +1,8 @@
 package es.mde.secres;
 
-public class FormacionContinuadaImpl extends SolicitudImpl implements FormacionContinuada {
+import java.time.LocalDate;
 
+public class FormacionContinuadaImpl extends SolicitudImpl implements FormacionContinuada {
   private int TIEMPOMAXIMO;
   private String escala;
 
@@ -14,4 +15,10 @@ public class FormacionContinuadaImpl extends SolicitudImpl implements FormacionC
   public String getEscala() {
     return escala;
   }
+
+    public FormacionContinuadaImpl(String nombreUCO, String ciu, String situacion,
+      Reservista reservista, LocalDate fechaInicio, LocalDate fechaFin, Expediente expediente) {
+    super(nombreUCO, ciu, situacion, reservista, fechaInicio, fechaFin, expediente);
+  }
+
 }

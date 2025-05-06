@@ -50,6 +50,7 @@ public class Expediente {
   public void agregarSolicitud(Solicitud solicitud) {
     if (Objects.equals(solicitud.getTipoSolicitud(), this.getTipoSolicitud())) {
       getSolicitudes().add(solicitud);
+      solicitud.setExpediente(this);
     } else {
       System.err.println("El tipo de la solicitud no coincide con el tipo del expediente. "
           + solicitud.getTipoSolicitud() + this.getTipoSolicitud());
@@ -59,6 +60,7 @@ public class Expediente {
   public void eliminarSolicitud(Solicitud solicitud) {
     if (getSolicitudes().contains(solicitud)) {
       getSolicitudes().remove(solicitud);
+      solicitud.setExpediente(null);
     } else {
       System.err.println("Este expediente no contiene esta solicitud");
     }

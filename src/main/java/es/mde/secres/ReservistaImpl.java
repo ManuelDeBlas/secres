@@ -1,30 +1,30 @@
 package es.mde.secres;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
 public class ReservistaImpl extends PersonaImpl implements Reservista {
-
-  private String DNI;
-  private int telefonoParticular;
-  private Date fechaFinCompromiso;
+  private String dni;
+  private String telefonoParticular;
+  private LocalDate fechaFinCompromiso;
   private int diasConsumidos;
   private String localidadResidencia;
   private String subdelegacionDefensa;
   private List<Solicitud> solicitudes;
 
   @Override
-  public String getDNI() {
-    return DNI;
+  public String getDni() {
+    return dni;
   }
 
   @Override
-  public int getTelefonoParticular() {
+  public String getTelefonoParticular() {
     return telefonoParticular;
   }
 
   @Override
-  public Date getFechaFinCompromiso() {
+  public LocalDate getFechaFinCompromiso() {
     return fechaFinCompromiso;
   }
 
@@ -46,6 +46,12 @@ public class ReservistaImpl extends PersonaImpl implements Reservista {
   @Override
   public List<Solicitud> getSolicitudes() {
     return solicitudes;
+  }
+  
+  public ReservistaImpl() {};
+  
+  public ReservistaImpl(String nombre, String apellido1, String apellido2, String empleo) {
+    super(nombre, apellido1, apellido2, empleo);
   }
 }
 

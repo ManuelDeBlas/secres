@@ -12,7 +12,7 @@ public class Propiedades {
 
     static {
       try {
-        costePorDia.load(new BufferedReader(new FileReader("../resources/coste-por-dia.properties")));
+        costePorDia.load(new BufferedReader(new FileReader("coste-por-dia.properties")));
       } catch (Exception e) {
         e.printStackTrace();
       }

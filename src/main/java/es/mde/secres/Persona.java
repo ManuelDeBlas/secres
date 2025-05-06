@@ -6,7 +6,9 @@ public interface Persona {
 
   String getNombre();
 
-  String getApellidos();
+  String getApellido1();
+  
+  String getApellido2();
 
   String getEmpleo();
 

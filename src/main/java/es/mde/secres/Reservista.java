@@ -1,15 +1,16 @@
 package es.mde.secres;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
 public interface Reservista extends Persona {
 
-  String getDNI();
+  String getDni();
 
-  int getTelefonoParticular();
+  String getTelefonoParticular();
 
-  Date getFechaFinCompromiso();
+  LocalDate getFechaFinCompromiso();
 
   int getDiasConsumidos();
 

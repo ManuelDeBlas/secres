@@ -1,7 +1,8 @@
 package es.mde.secres;
 
 import java.time.LocalDate;
-import java.util.Date;
+
+import es.mde.secres.SolicitudImpl.Estados;
 
 
 public interface Solicitud {
@@ -10,7 +11,9 @@ public interface Solicitud {
 
   String getCiu();
 
-  String getSituacion();
+  Estados getEstado();
+  
+  void setEstado(Estados estado);
 
   Reservista getReservista();
 

@@ -1,7 +1,7 @@
 package es.mde.secres;
 
 import java.time.LocalDate;
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ReservistaImpl extends PersonaImpl implements Reservista {
@@ -47,11 +47,21 @@ public class ReservistaImpl extends PersonaImpl implements Reservista {
   public List<Solicitud> getSolicitudes() {
     return solicitudes;
   }
-  
-  public ReservistaImpl() {};
-  
-  public ReservistaImpl(String nombre, String apellido1, String apellido2, String empleo) {
-    super(nombre, apellido1, apellido2, empleo);
-  }
-}
 
+  public ReservistaImpl() {
+  }
+
+  public ReservistaImpl(String nombre, String apellido1, String apellido2, String empleo, String dni,
+      String telefonoParticular, LocalDate fechaFinCompromiso, int diasConsumidos, String localidadResidencia,
+      String subdelegacionDefensa) {
+    super(nombre, apellido1, apellido2, empleo);
+    this.dni = dni;
+    this.telefonoParticular = telefonoParticular;
+    this.fechaFinCompromiso = fechaFinCompromiso;
+    this.diasConsumidos = diasConsumidos;
+    this.localidadResidencia = localidadResidencia;
+    this.subdelegacionDefensa = subdelegacionDefensa;
+    this.solicitudes = new ArrayList<Solicitud>();
+  }
+
+}

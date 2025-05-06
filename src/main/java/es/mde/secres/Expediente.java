@@ -6,6 +6,8 @@ import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import es.mde.secres.SolicitudImpl.Estados;
+
 public class Expediente {
   private static Pattern REGEX_TIPO_SOLICITUD = Pattern.compile("(PS|FC|EX)");
 
@@ -51,6 +53,7 @@ public class Expediente {
     if (Objects.equals(solicitud.getTipoSolicitud(), this.getTipoSolicitud())) {
       getSolicitudes().add(solicitud);
       solicitud.setExpediente(this);
+      solicitud.setSituacion(Estados.ACEPTADA_PENDIENTE_PUBLICACION);
     } else {
       System.err.println("El tipo de la solicitud no coincide con el tipo del expediente. "
           + solicitud.getTipoSolicitud() + this.getTipoSolicitud());
@@ -61,12 +64,13 @@ public class Expediente {
     if (getSolicitudes().contains(solicitud)) {
       getSolicitudes().remove(solicitud);
       solicitud.setExpediente(null);
+      solicitud.setSituacion(Estados.PENDIENTE_EVALUACION);
     } else {
       System.err.println("Este expediente no contiene esta solicitud");
     }
   }
 
-  private float getCoste() {
+  public float getCoste() {
     float coste = 0f;
     for (Solicitud solicitud : getSolicitudes()) {
       coste += solicitud.getCoste();

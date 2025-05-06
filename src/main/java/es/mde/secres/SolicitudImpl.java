@@ -6,9 +6,16 @@ import java.time.temporal.ChronoUnit;
 import importadores.Propiedades;
 
 public abstract class SolicitudImpl implements Solicitud {
+  enum Estados {
+    PENDIENTE_EVALUACION,
+    ACEPTADA_PENDIENTE_PUBLICACION,
+    PUBLICADA,
+    RECHAZADA
+  }
+  
   private String nombreUco;
   private String ciu;
-  private String situacion;
+  private Estados estado;
   private Reservista reservista;
   private LocalDate fechaInicio;
   private LocalDate fechaFin;
@@ -25,8 +32,13 @@ public abstract class SolicitudImpl implements Solicitud {
   }
 
   @Override
-  public String getSituacion() {
-    return situacion;
+  public Estados getEstado() {
+    return estado;
+  }
+  
+  @Override
+  public void setEstado(Estados estado) {
+    this.estado = estado;
   }
 
   @Override
@@ -57,15 +69,14 @@ public abstract class SolicitudImpl implements Solicitud {
   public SolicitudImpl() {
   }
 
-  public SolicitudImpl(String nombreUco, String ciu, String situacion, Reservista reservista,
-      LocalDate fechaInicio, LocalDate fechaFin, Expediente expediente) {
+  public SolicitudImpl(String nombreUco, String ciu, Reservista reservista,
+      LocalDate fechaInicio, LocalDate fechaFin) {
     this.nombreUco = nombreUco;
     this.ciu = ciu;
-    this.situacion = situacion;
+    setSituacion(Estados.PENDIENTE_EVALUACION);
     this.reservista = reservista;
     this.fechaInicio = fechaInicio;
     this.fechaFin = fechaFin;
-    this.expediente = expediente;
   }
 
   @Override

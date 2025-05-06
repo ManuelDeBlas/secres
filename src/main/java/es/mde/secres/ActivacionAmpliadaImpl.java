@@ -20,5 +20,7 @@ public class ActivacionAmpliadaImpl extends SolicitudImpl implements ActivacionA
       Reservista reservista, LocalDate fechaInicio, LocalDate fechaFin, Expediente expediente) {
     super(nombreUCO, ciu, situacion, reservista, fechaInicio, fechaFin, expediente);
   }
+    
+    public ActivacionAmpliadaImpl() {}
 
 }

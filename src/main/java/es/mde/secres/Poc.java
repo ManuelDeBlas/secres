@@ -18,6 +18,9 @@ public class Poc extends PersonaImpl {
     return emailCorporativo;
   }
 
+  public Poc() {
+  }
+
   public Poc(String nombre, String apellido1, String apellido2, String empleo, String ucoDestino,
       String telefonoCorporativo, String emailCorporativo) {
     super(nombre, apellido1, apellido2, empleo);

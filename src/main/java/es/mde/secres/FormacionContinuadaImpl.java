@@ -16,9 +16,9 @@ public class FormacionContinuadaImpl extends SolicitudImpl implements FormacionC
     return escala;
   }
 
-    public FormacionContinuadaImpl(String nombreUCO, String ciu, String situacion,
-      Reservista reservista, LocalDate fechaInicio, LocalDate fechaFin, Expediente expediente) {
-    super(nombreUCO, ciu, situacion, reservista, fechaInicio, fechaFin, expediente);
+  public FormacionContinuadaImpl(String nombreUCO, String ciu, Reservista reservista,
+      LocalDate fechaInicio, LocalDate fechaFin) {
+    super(nombreUCO, ciu, reservista, fechaInicio, fechaFin);
   }
 
 }

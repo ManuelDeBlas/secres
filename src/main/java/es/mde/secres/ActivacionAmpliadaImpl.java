@@ -16,11 +16,11 @@ public class ActivacionAmpliadaImpl extends SolicitudImpl implements ActivacionA
     this.motivo = motivo;
   }
 
-    public ActivacionAmpliadaImpl(String nombreUCO, String ciu, String situacion,
-      Reservista reservista, LocalDate fechaInicio, LocalDate fechaFin, Expediente expediente) {
-    super(nombreUCO, ciu, situacion, reservista, fechaInicio, fechaFin, expediente);
+  public ActivacionAmpliadaImpl(String nombreUCO, String ciu, Reservista reservista,
+      LocalDate fechaInicio, LocalDate fechaFin) {
+    super(nombreUCO, ciu, reservista, fechaInicio, fechaFin);
   }
-    
-    public ActivacionAmpliadaImpl() {}
+
+  public ActivacionAmpliadaImpl() {}
 
 }

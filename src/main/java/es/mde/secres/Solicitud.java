@@ -12,7 +12,7 @@ public interface Solicitud {
   String getCiu();
 
   Estados getEstado();
-  
+
   void setEstado(Estados estado);
 
   Reservista getReservista();
@@ -20,15 +20,24 @@ public interface Solicitud {
   LocalDate getFechaInicio();
 
   LocalDate getFechaFin();
-  
+
   Expediente getExpediente();
-  
+
   void setExpediente(Expediente expediente);
 
   float getCoste();
 
   default String getTipoSolicitud() {
-    return this.getClass().getName();
+    String nombreClase = this.getClass().getName();
+    String tipoSolicitud = null;
+    if (nombreClase.contains("PrestacionServiciosUnidad")) {
+      tipoSolicitud = "PS";
+    } else if (nombreClase.contains("FormacionContinuada")) {
+      tipoSolicitud = "FC";
+    } else if (nombreClase.contains("ActivacionAmpliada")) {
+      tipoSolicitud = "EX";
+    }
+    return tipoSolicitud;
   }
 
 }

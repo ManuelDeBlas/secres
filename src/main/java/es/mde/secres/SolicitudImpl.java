@@ -3,10 +3,9 @@ package es.mde.secres;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-import importadores.Propiedades;
 
 public abstract class SolicitudImpl implements Solicitud {
-  enum Estados {
+  public enum Estados {
     PENDIENTE_EVALUACION,
     ACEPTADA_PENDIENTE_PUBLICACION,
     PUBLICADA,
@@ -73,7 +72,7 @@ public abstract class SolicitudImpl implements Solicitud {
       LocalDate fechaInicio, LocalDate fechaFin) {
     this.nombreUco = nombreUco;
     this.ciu = ciu;
-    setSituacion(Estados.PENDIENTE_EVALUACION);
+    setEstado(Estados.PENDIENTE_EVALUACION);
     this.reservista = reservista;
     this.fechaInicio = fechaInicio;
     this.fechaFin = fechaFin;

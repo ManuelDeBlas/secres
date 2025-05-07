@@ -49,6 +49,7 @@ public class ReservistaImpl extends PersonaImpl implements Reservista {
   }
 
   public ReservistaImpl() {
+    solicitudes = new ArrayList<Solicitud>();
   }
 
   public ReservistaImpl(String nombre, String apellido1, String apellido2, String empleo, String dni,

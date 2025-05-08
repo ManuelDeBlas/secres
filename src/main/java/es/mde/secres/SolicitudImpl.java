@@ -15,10 +15,10 @@ public abstract class SolicitudImpl implements Solicitud {
   private String nombreUco;
   private String ciu;
   private Estados estado;
-  private Reservista reservista;
+//  private Reservista reservista;
   private LocalDate fechaInicio;
   private LocalDate fechaFin;
-  private Expediente expediente;
+//  private Expediente expediente;
 
   @Override
   public String getNombreUco() {
@@ -40,10 +40,10 @@ public abstract class SolicitudImpl implements Solicitud {
     this.estado = estado;
   }
 
-  @Override
-  public Reservista getReservista() {
-    return reservista;
-  }
+//  @Override
+//  public Reservista getReservista() {
+//    return reservista;
+//  }
 
   @Override
   public LocalDate getFechaInicio() {
@@ -55,15 +55,15 @@ public abstract class SolicitudImpl implements Solicitud {
     return fechaFin;
   }
 
-  @Override
-  public Expediente getExpediente() {
-    return expediente;
-  }
-
-  @Override
-  public void setExpediente(Expediente expediente) {
-    this.expediente = expediente;
-  }
+//  @Override
+//  public Expediente getExpediente() {
+//    return expediente;
+//  }
+//
+//  @Override
+//  public void setExpediente(Expediente expediente) {
+//    this.expediente = expediente;
+//  }
   
   public SolicitudImpl() {
   }
@@ -73,7 +73,7 @@ public abstract class SolicitudImpl implements Solicitud {
     this.nombreUco = nombreUco;
     this.ciu = ciu;
     setEstado(Estados.PENDIENTE_EVALUACION);
-    this.reservista = reservista;
+//    this.reservista = reservista;
     this.fechaInicio = fechaInicio;
     this.fechaFin = fechaFin;
   }

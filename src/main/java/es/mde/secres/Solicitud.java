@@ -15,15 +15,15 @@ public interface Solicitud {
 
   void setEstado(Estados estado);
 
-  Reservista getReservista();
+//  Reservista getReservista();
 
   LocalDate getFechaInicio();
 
   LocalDate getFechaFin();
 
-  Expediente getExpediente();
+//  Expediente getExpediente();
 
-  void setExpediente(Expediente expediente);
+//  void setExpediente(Expediente expediente);
 
   float getCoste();
 

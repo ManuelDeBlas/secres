@@ -17,6 +17,6 @@ public interface Reservista extends Persona {
 
   String getSubdelegacionDefensa();
   
-  List<Solicitud> getSolicitudes();
+//  List<Solicitud> getSolicitudes();
 
 }

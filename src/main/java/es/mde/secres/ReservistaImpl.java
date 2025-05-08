@@ -11,7 +11,7 @@ public class ReservistaImpl extends PersonaImpl implements Reservista {
   private int diasConsumidos;
   private String localidadResidencia;
   private String subdelegacionDefensa;
-  private List<Solicitud> solicitudes;
+//  private List<Solicitud> solicitudes;
 
   @Override
   public String getDni() {
@@ -43,14 +43,12 @@ public class ReservistaImpl extends PersonaImpl implements Reservista {
     return subdelegacionDefensa;
   }
 
-  @Override
-  public List<Solicitud> getSolicitudes() {
-    return solicitudes;
-  }
+//  @Override
+//  public List<Solicitud> getSolicitudes() {
+//    return solicitudes;
+//  }
 
-  public ReservistaImpl() {
-    solicitudes = new ArrayList<Solicitud>();
-  }
+  public ReservistaImpl() {}
 
   public ReservistaImpl(String nombre, String apellido1, String apellido2, String empleo, String dni,
       String telefonoParticular, LocalDate fechaFinCompromiso, int diasConsumidos, String localidadResidencia,
@@ -62,7 +60,6 @@ public class ReservistaImpl extends PersonaImpl implements Reservista {
     this.diasConsumidos = diasConsumidos;
     this.localidadResidencia = localidadResidencia;
     this.subdelegacionDefensa = subdelegacionDefensa;
-    this.solicitudes = new ArrayList<Solicitud>();
   }
 
 }

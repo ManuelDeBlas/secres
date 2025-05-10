@@ -1,89 +1,61 @@
 package es.mde.secres;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import es.mde.secres.SolicitudImpl.Estados;
-
+/**
+ * Representa un expediente que contiene información sobre el número de
+ * expediente y el tipo de solicitud asociada.
+ */
 public class Expediente {
+
+  /**
+   * Expresión regular para validar el tipo de solicitud ('PS', 'FC', 'EX').
+   */
   protected static Pattern REGEX_TIPO_SOLICITUD = Pattern.compile("(PS|FC|EX)");
 
   private String numeroExpediente;
   private String tipoSolicitud;
-  // private List<Solicitud> solicitudes = new ArrayList<>();
 
+  /**
+   * Obtiene el número de expediente.
+   *
+   * @return el número de expediente.
+   */
   public String getNumeroExpediente() {
     return numeroExpediente;
   }
 
+  /**
+   * Establece el número de expediente.
+   *
+   * @param numeroExpediente el número de expediente a establecer.
+   */
   public void setNumeroExpediente(String numeroExpediente) {
     this.numeroExpediente = numeroExpediente;
   }
 
+  /**
+   * Obtiene el tipo de solicitud.
+   *
+   * @return el tipo de solicitud.
+   */
   public String getTipoSolicitud() {
     return tipoSolicitud;
   }
 
+  /**
+   * Establece el tipo de solicitud.
+   *
+   * @param tipoSolicitud el tipo de solicitud a establecer.
+   */
   public void setTipoSolicitud(String tipoSolicitud) {
     this.tipoSolicitud = tipoSolicitud;
   }
 
-  // public List<Solicitud> getSolicitudes() {
-  // return solicitudes;
-  // }
-  //
-  // public void setSolicitudes(List<Solicitud> solicitudes) {
-  // this.solicitudes = solicitudes;
-  // }
-
-  public Expediente() {}
-
-  /*
-   * Este método devuelve 'PS', 'FC' o 'EX'
+  /**
+   * Constructor por defecto de la clase Expediente.
    */
-  // protected String getTipoSolicitud() {
-  // Matcher matcher = REGEX_TIPO_SOLICITUD.matcher(getNumeroExpediente());
-  // String resultado = null;
-  // try {
-  // resultado = matcher.group(1);
-  // } catch (Exception e) {
-  // e.getMessage();
-  // }
-  //
-  // return resultado;
-  // }
-
-  // public void agregarSolicitud(Solicitud solicitud) {
-  // if (Objects.equals(solicitud.getTipoSolicitud(), this.getTipoSolicitud())) {
-  // getSolicitudes().add(solicitud);
-  // solicitud.setExpediente(this);
-  // solicitud.setEstado(Estados.ACEPTADA_PENDIENTE_PUBLICACION);
-  // } else {
-  // System.err.println("El tipo de la solicitud no coincide con el tipo del expediente. "
-  // + solicitud.getTipoSolicitud() + this.getTipoSolicitud());
-  // }
-  // }
-  //
-  // public void eliminarSolicitud(Solicitud solicitud) {
-  // if (getSolicitudes().contains(solicitud)) {
-  // getSolicitudes().remove(solicitud);
-  // solicitud.setExpediente(null);
-  // solicitud.setEstado(Estados.PENDIENTE_EVALUACION);
-  // } else {
-  // System.err.println("Este expediente no contiene esta solicitud");
-  // }
-  // }
-  //
-  // public float getCoste() {
-  // float coste = 0f;
-  // for (Solicitud solicitud : getSolicitudes()) {
-  // coste += solicitud.getCoste();
-  // }
-  //
-  // return coste;
-  // }
+  public Expediente() {
+  }
 
 }

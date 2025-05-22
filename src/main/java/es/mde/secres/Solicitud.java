@@ -7,6 +7,10 @@ import java.time.LocalDate;
  * comunes.
  */
 public interface Solicitud {
+
+  /**
+   * Estados posibles de una solicitud.
+   */
   public enum Estados {
     PENDIENTE_EVALUACION, ACEPTADA_PENDIENTE_PUBLICACION, PUBLICADA, RECHAZADA
   }
@@ -52,6 +56,16 @@ public interface Solicitud {
    * @return la fecha de finalización.
    */
   LocalDate getFechaFin();
+  
+  Reservista getReservista();
+  
+  String getTelefonoPoc();
+  
+  String getCargoEnLaUnidadPoc();
+  
+  Expediente getExpediente();
+  
+  void setExpediente(Expediente expediente);
 
   /**
    * Calcula el coste de la solicitud en función de su duración.

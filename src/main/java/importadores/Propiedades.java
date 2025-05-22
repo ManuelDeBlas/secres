@@ -15,12 +15,16 @@ public class Propiedades {
   /**
    * Propiedades que almacenan los costes por día.
    */
-  private static Properties costePorDia = new Properties();
+  private static Properties costePorDiaCentimos = new Properties();
 
   static {
-    try {
-      costePorDia.load(new BufferedReader(new FileReader("coste-por-dia.properties")));
-    } catch (Exception e) {
+    try (var input = Propiedades.class.getClassLoader().getResourceAsStream("coste-por-dia.properties")) {
+      if (input != null) {
+        costePorDiaCentimos.load(input);
+      } else {
+        System.err.println("Archivo coste-por-dia.properties no encontrado en el classpath.");
+      }
+    } catch (IOException e) {
       e.printStackTrace();
     }
   }
@@ -30,8 +34,8 @@ public class Propiedades {
    *
    * @return un objeto {@link Properties} con los costes por día.
    */
-  public static Properties getCostePorDia() {
-    return costePorDia;
+  public static Properties getCostePorDiaCentimos() {
+    return costePorDiaCentimos;
   }
 
 }

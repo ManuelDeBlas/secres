@@ -8,15 +8,16 @@ import java.time.temporal.ChronoUnit;
  * solicitud genérica con atributos comunes.
  */
 public abstract class SolicitudImpl implements Solicitud {
-  /**
-   * Estados posibles de una solicitud.
-   */
 
   private String nombreUco;
   private String ciu;
   private Estados estado;
   private LocalDate fechaInicio;
   private LocalDate fechaFin;
+  private String telefonoPoc;
+  private String cargoEnLaUnidadPoc;
+  private Reservista reservista;
+  private Expediente expediente;
 
   /**
    * Obtiene el nombre de la UCO asociada a la solicitud.
@@ -27,6 +28,10 @@ public abstract class SolicitudImpl implements Solicitud {
   public String getNombreUco() {
     return nombreUco;
   }
+  
+  public void setNombreUco(String nombreUco) {
+    this.nombreUco = nombreUco;
+  }
 
   /**
    * Obtiene el CIU asociado a la solicitud.
@@ -36,6 +41,10 @@ public abstract class SolicitudImpl implements Solicitud {
   @Override
   public String getCiu() {
     return ciu;
+  }
+  
+  public void setCiu(String ciu) {
+    this.ciu = ciu;
   }
 
   /**
@@ -67,6 +76,10 @@ public abstract class SolicitudImpl implements Solicitud {
   public LocalDate getFechaInicio() {
     return fechaInicio;
   }
+  
+  public void setFechaInicio(LocalDate fechaInicio) {
+    this.fechaInicio = fechaInicio;
+  }
 
   /**
    * Obtiene la fecha de finalización de la solicitud.
@@ -76,6 +89,46 @@ public abstract class SolicitudImpl implements Solicitud {
   @Override
   public LocalDate getFechaFin() {
     return fechaFin;
+  }
+  
+  public void setFechaFin(LocalDate fechaFin) {
+    this.fechaFin = fechaFin;
+  }
+
+  @Override
+  public Reservista getReservista() {
+    return reservista;
+  }
+  
+  public void setReservista(Reservista reservista) {
+    this.reservista = reservista;
+  }
+
+  @Override
+  public String getTelefonoPoc() {
+    return telefonoPoc;
+  }
+  
+  public void setTelefonoPoc(String telefonoPoc) {
+    this.telefonoPoc = telefonoPoc;
+  }
+
+  @Override
+  public String getCargoEnLaUnidadPoc() {
+    return cargoEnLaUnidadPoc;
+  }
+  
+  public void setCargoEnLaUnidadPoc(String cargoEnLaUnidadPoc) {
+    this.cargoEnLaUnidadPoc = cargoEnLaUnidadPoc;
+  }
+  
+  @Override
+  public Expediente getExpediente() {
+    return expediente;
+  }
+  
+  public void setExpediente(Expediente expediente) {
+    this.expediente = expediente;
   }
 
   /**
@@ -109,6 +162,6 @@ public abstract class SolicitudImpl implements Solicitud {
   @Override
   public float getCoste() {
     long duracion = ChronoUnit.DAYS.between(getFechaFin(), getFechaInicio());
-    return duracion * 3f; // TODO: Ajustar el cálculo del coste.
+    return duracion * getReservista().getCosteDiaCentimos();
   }
 }

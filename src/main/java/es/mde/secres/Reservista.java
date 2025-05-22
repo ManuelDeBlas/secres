@@ -1,52 +1,164 @@
 package es.mde.secres;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collection;
+
+import importadores.Propiedades;
 
 /**
- * Interfaz que representa un reservista con información personal y profesional.
+ * Implementación de la interfaz {@link Reservista}, que representa a un
+ * reservista con información personal y profesional.
  */
-public interface Reservista extends Persona {
+public class Reservista {
+
+  private String nombre;
+  private String apellido1;
+  private String apellido2;
+  private String empleo;
+  private String dni;
+  private String telefonoParticular;
+  private LocalDate fechaFinCompromiso;
+  private int diasConsumidos;
+  private String localidadResidencia;
+  private String subdelegacionDefensa;
+  private Collection<Solicitud> solicitudes = new ArrayList<Solicitud>();
+
+  /**
+   * Obtiene el nombre de la persona.
+   *
+   * @return el nombre.
+   */
+  public String getNombre() {
+    return nombre;
+  }
+
+  /**
+   * Obtiene el primer apellido de la persona.
+   *
+   * @return el primer apellido.
+   */
+  public String getApellido1() {
+    return apellido1;
+  }
+
+  /**
+   * Obtiene el segundo apellido de la persona.
+   *
+   * @return el segundo apellido.
+   */
+  public String getApellido2() {
+    return apellido2;
+  }
+
+  /**
+   * Obtiene el empleo de la persona.
+   *
+   * @return el empleo.
+   */
+  public String getEmpleo() {
+    return empleo;
+  }
 
   /**
    * Obtiene el DNI del reservista.
    *
    * @return el DNI del reservista.
    */
-  String getDni();
+  public String getDni() {
+    return dni;
+  }
 
   /**
    * Obtiene el teléfono particular del reservista.
    *
-   * @return el teléfono particular.
+   * @return el teléfono particular del reservista.
    */
-  String getTelefonoParticular();
+  public String getTelefonoParticular() {
+    return telefonoParticular;
+  }
 
   /**
    * Obtiene la fecha de finalización del compromiso del reservista.
    *
    * @return la fecha de finalización del compromiso.
    */
-  LocalDate getFechaFinCompromiso();
+  public LocalDate getFechaFinCompromiso() {
+    return fechaFinCompromiso;
+  }
 
   /**
    * Obtiene el número de días consumidos por el reservista.
    *
    * @return el número de días consumidos.
    */
-  int getDiasConsumidos();
+  public int getDiasConsumidos() {
+    return diasConsumidos;
+  }
 
   /**
    * Obtiene la localidad de residencia del reservista.
    *
    * @return la localidad de residencia.
    */
-  String getLocalidadResidencia();
+  public String getLocalidadResidencia() {
+    return localidadResidencia;
+  }
 
   /**
    * Obtiene la subdelegación de defensa del reservista.
    *
    * @return la subdelegación de defensa.
    */
-  String getSubdelegacionDefensa();
+  public String getSubdelegacionDefensa() {
+    return subdelegacionDefensa;
+  }
+
+  public Collection<Solicitud> getSolicitudes() {
+    return solicitudes;
+  }
+
+  public void setSolicitudes(Collection<Solicitud> solicitudes) {
+    this.solicitudes = solicitudes;
+  }
+
+  /**
+   * Constructor por defecto de la clase {@code ReservistaImpl}.
+   */
+  public Reservista() {
+  }
+
+  /**
+   * Constructor que inicializa los atributos del reservista.
+   *
+   * @param nombre               el nombre del reservista.
+   * @param apellido1            el primer apellido del reservista.
+   * @param apellido2            el segundo apellido del reservista.
+   * @param empleo               el empleo del reservista.
+   * @param dni                  el DNI del reservista.
+   * @param telefonoParticular   el teléfono particular del reservista.
+   * @param fechaFinCompromiso   la fecha de finalización del compromiso.
+   * @param diasConsumidos       el número de días consumidos.
+   * @param localidadResidencia  la localidad de residencia.
+   * @param subdelegacionDefensa la subdelegación de defensa.
+   */
+  public Reservista(String nombre, String apellido1, String apellido2, String empleo, String dni,
+      String telefonoParticular, LocalDate fechaFinCompromiso, int diasConsumidos, String localidadResidencia,
+      String subdelegacionDefensa) {
+    this.nombre = nombre;
+    this.apellido1 = apellido1;
+    this.apellido2 = apellido2;
+    this.empleo = empleo;
+    this.dni = dni;
+    this.telefonoParticular = telefonoParticular;
+    this.fechaFinCompromiso = fechaFinCompromiso;
+    this.diasConsumidos = diasConsumidos;
+    this.localidadResidencia = localidadResidencia;
+    this.subdelegacionDefensa = subdelegacionDefensa;
+  }
+
+  public int getCosteDiaCentimos() {
+    return Integer.parseInt(Propiedades.getCostePorDiaCentimos().getProperty(getEmpleo()));
+  }
 
 }

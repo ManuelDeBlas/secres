@@ -24,7 +24,6 @@ public class Expediente {
   private String numeroExpediente;
   private String estado;
 //  private String tipoSolicitud;
-  private boolean pagaSecres;
   private Collection<Solicitud> solicitudes = new ArrayList<Solicitud>();
 
   /**
@@ -51,14 +50,6 @@ public class Expediente {
 
   public void setEstado(String estado) {
     this.estado = estado;
-  }
-
-  public boolean isPagaSecres() {
-    return pagaSecres;
-  }
-
-  public void setPagaSecres(boolean pagaSecres) {
-    this.pagaSecres = pagaSecres;
   }
 
 ///**

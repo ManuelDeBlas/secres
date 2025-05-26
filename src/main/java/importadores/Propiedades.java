@@ -16,13 +16,33 @@ public class Propiedades {
    * Propiedades que almacenan los costes por día.
    */
   private static Properties costePorDiaCentimos = new Properties();
+  private static Properties tiempoMaximoActivacion = new Properties();
+  private static Properties utils = new Properties();
 
   static {
-    try (var input = Propiedades.class.getClassLoader().getResourceAsStream("coste-por-dia.properties")) {
+    try (var input = Propiedades.class.getClassLoader().getResourceAsStream("coste-por-dia-centimos.properties")) {
       if (input != null) {
         costePorDiaCentimos.load(input);
       } else {
         System.err.println("Archivo coste-por-dia.properties no encontrado en el classpath.");
+      }
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    try (var input = Propiedades.class.getClassLoader().getResourceAsStream("tiempo-maximo-activacion.properties")) {
+      if (input != null) {
+        tiempoMaximoActivacion.load(input);
+      } else {
+        System.err.println("Archivo tiempo-maximo-activacion.properties no encontrado en el classpath.");
+      }
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    try (var input = Propiedades.class.getClassLoader().getResourceAsStream("utils.properties")) {
+      if (input != null) {
+        utils.load(input);
+      } else {
+        System.err.println("Archivo utils.properties no encontrado en el classpath.");
       }
     } catch (IOException e) {
       e.printStackTrace();
@@ -36,6 +56,14 @@ public class Propiedades {
    */
   public static Properties getCostePorDiaCentimos() {
     return costePorDiaCentimos;
+  }
+  
+  public static Properties getTiempoMaximoActivacion() {
+    return tiempoMaximoActivacion;
+  }
+  
+  public static Properties getUtils() {
+    return utils;
   }
 
 }

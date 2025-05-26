@@ -16,6 +16,7 @@ public abstract class SolicitudImpl implements Solicitud {
   private LocalDate fechaFin;
   private String telefonoPoc;
   private String cargoEnLaUnidadPoc;
+  private boolean pagaSecres;
   private Reservista reservista;
   private Expediente expediente;
 
@@ -28,7 +29,7 @@ public abstract class SolicitudImpl implements Solicitud {
   public String getNombreUco() {
     return nombreUco;
   }
-  
+
   public void setNombreUco(String nombreUco) {
     this.nombreUco = nombreUco;
   }
@@ -42,7 +43,7 @@ public abstract class SolicitudImpl implements Solicitud {
   public String getCiu() {
     return ciu;
   }
-  
+
   public void setCiu(String ciu) {
     this.ciu = ciu;
   }
@@ -76,7 +77,7 @@ public abstract class SolicitudImpl implements Solicitud {
   public LocalDate getFechaInicio() {
     return fechaInicio;
   }
-  
+
   public void setFechaInicio(LocalDate fechaInicio) {
     this.fechaInicio = fechaInicio;
   }
@@ -90,7 +91,7 @@ public abstract class SolicitudImpl implements Solicitud {
   public LocalDate getFechaFin() {
     return fechaFin;
   }
-  
+
   public void setFechaFin(LocalDate fechaFin) {
     this.fechaFin = fechaFin;
   }
@@ -99,7 +100,7 @@ public abstract class SolicitudImpl implements Solicitud {
   public Reservista getReservista() {
     return reservista;
   }
-  
+
   public void setReservista(Reservista reservista) {
     this.reservista = reservista;
   }
@@ -108,7 +109,7 @@ public abstract class SolicitudImpl implements Solicitud {
   public String getTelefonoPoc() {
     return telefonoPoc;
   }
-  
+
   public void setTelefonoPoc(String telefonoPoc) {
     this.telefonoPoc = telefonoPoc;
   }
@@ -117,16 +118,26 @@ public abstract class SolicitudImpl implements Solicitud {
   public String getCargoEnLaUnidadPoc() {
     return cargoEnLaUnidadPoc;
   }
-  
+
   public void setCargoEnLaUnidadPoc(String cargoEnLaUnidadPoc) {
     this.cargoEnLaUnidadPoc = cargoEnLaUnidadPoc;
   }
-  
+
+  @Override
+  public boolean isPagaSecres() {
+    return pagaSecres;
+  }
+
+  @Override
+  public void setPagaSecres(boolean pagaSecres) {
+    this.pagaSecres = pagaSecres;
+  }
+
   @Override
   public Expediente getExpediente() {
     return expediente;
   }
-  
+
   public void setExpediente(Expediente expediente) {
     this.expediente = expediente;
   }
@@ -154,14 +165,4 @@ public abstract class SolicitudImpl implements Solicitud {
     this.fechaFin = fechaFin;
   }
 
-  /**
-   * Calcula el coste de la solicitud en función de su duración.
-   *
-   * @return el coste de la solicitud.
-   */
-  @Override
-  public float getCoste() {
-    long duracion = ChronoUnit.DAYS.between(getFechaFin(), getFechaInicio());
-    return duracion * getReservista().getCosteDiaCentimos();
-  }
 }

@@ -1,6 +1,7 @@
 package es.mde.secres;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 /**
  * Interfaz que representa una solicitud genérica con atributos y métodos
@@ -63,6 +64,10 @@ public interface Solicitud {
   
   String getCargoEnLaUnidadPoc();
   
+  boolean isPagaSecres();
+
+  void setPagaSecres(boolean pagaSecres);
+  
   Expediente getExpediente();
   
   void setExpediente(Expediente expediente);
@@ -72,7 +77,10 @@ public interface Solicitud {
    *
    * @return el coste de la solicitud.
    */
-  float getCoste();
+  default int getCosteCentimos() {
+    long duracion = ChronoUnit.DAYS.between(getFechaFin(), getFechaInicio());
+    return Math.toIntExact(duracion * getReservista().getCosteDiaCentimos());
+  }
 
   /**
    * Obtiene el tipo de solicitud basado en el nombre de la clase.

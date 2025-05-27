@@ -7,8 +7,8 @@ import java.util.Collection;
 import importadores.Propiedades;
 
 /**
- * Implementación de la interfaz {@link Reservista}, que representa a un
- * reservista con información personal y profesional.
+ * Implementación de la interfaz {@link Reservista}, que representa a un reservista con información
+ * personal y profesional.
  */
 public class Reservista {
 
@@ -19,6 +19,7 @@ public class Reservista {
   private String dni;
   private String telefonoParticular;
   private LocalDate fechaFinCompromiso;
+  private LocalDate fechaCaducidadReconocimientoMedico;
   private int diasConsumidos;
   private String localidadResidencia;
   private String subdelegacionDefensa;
@@ -87,6 +88,18 @@ public class Reservista {
     return fechaFinCompromiso;
   }
 
+  public void setFechaFinCompromiso(LocalDate fechaFinCompromiso) {
+    this.fechaFinCompromiso = fechaFinCompromiso;
+  }
+
+  public LocalDate getFechaCaducidadReconocimientoMedico() {
+    return fechaCaducidadReconocimientoMedico;
+  }
+
+  public void setFechaCaducidadReconocimientoMedico(LocalDate fechaCaducidadReconocimientoMedico) {
+    this.fechaCaducidadReconocimientoMedico = fechaCaducidadReconocimientoMedico;
+  }
+
   /**
    * Obtiene el número de días consumidos por el reservista.
    *
@@ -125,26 +138,25 @@ public class Reservista {
   /**
    * Constructor por defecto de la clase {@code ReservistaImpl}.
    */
-  public Reservista() {
-  }
+  public Reservista() {}
 
   /**
    * Constructor que inicializa los atributos del reservista.
    *
-   * @param nombre               el nombre del reservista.
-   * @param apellido1            el primer apellido del reservista.
-   * @param apellido2            el segundo apellido del reservista.
-   * @param empleo               el empleo del reservista.
-   * @param dni                  el DNI del reservista.
-   * @param telefonoParticular   el teléfono particular del reservista.
-   * @param fechaFinCompromiso   la fecha de finalización del compromiso.
-   * @param diasConsumidos       el número de días consumidos.
-   * @param localidadResidencia  la localidad de residencia.
+   * @param nombre el nombre del reservista.
+   * @param apellido1 el primer apellido del reservista.
+   * @param apellido2 el segundo apellido del reservista.
+   * @param empleo el empleo del reservista.
+   * @param dni el DNI del reservista.
+   * @param telefonoParticular el teléfono particular del reservista.
+   * @param fechaFinCompromiso la fecha de finalización del compromiso.
+   * @param diasConsumidos el número de días consumidos.
+   * @param localidadResidencia la localidad de residencia.
    * @param subdelegacionDefensa la subdelegación de defensa.
    */
   public Reservista(String nombre, String apellido1, String apellido2, String empleo, String dni,
-      String telefonoParticular, LocalDate fechaFinCompromiso, int diasConsumidos, String localidadResidencia,
-      String subdelegacionDefensa) {
+      String telefonoParticular, LocalDate fechaFinCompromiso, int diasConsumidos,
+      String localidadResidencia, String subdelegacionDefensa) {
     this.nombre = nombre;
     this.apellido1 = apellido1;
     this.apellido2 = apellido2;

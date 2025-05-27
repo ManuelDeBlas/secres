@@ -96,36 +96,10 @@ public class Expediente {
     if (matcherNumeroExpediente.matches()) {
       String anhoString = matcherNumeroExpediente.group(3);
       anho = Integer.parseInt(anhoString);
+      anho += 2000;
     }
 
     return anho;
-  }
-
-  public void addSolicitud(Solicitud solicitud) {
-    if (solicitud.getExpediente() != null) {
-      throw new IllegalArgumentException(
-          "Esta solicitud ya está asignada al expediente " + solicitud.getExpediente().getNumeroExpediente()
-              + ". Elimínela de su expediente antes de asignarla a otro.");
-    }
-    if (Objects.equals(solicitud.getTipoSolicitud(), this.getTipoSolicitud())) {
-      getSolicitudes().add(solicitud);
-      solicitud.setExpediente(this);
-      solicitud.setEstado(Estados.ACEPTADA_PENDIENTE_PUBLICACION);
-    } else {
-      throw new IllegalArgumentException("El tipo de la solicitud (" + solicitud.getTipoSolicitud()
-          + ") no coincide con el tipo del expediente (" + this.getTipoSolicitud() + ")");
-    }
-  }
-
-  public void removeSolicitud(Solicitud solicitud) {
-    if (getSolicitudes().contains(solicitud)) {
-      getSolicitudes().remove(solicitud);
-      solicitud.setExpediente(null);
-      solicitud.setEstado(Estados.PENDIENTE_EVALUACION);
-    } else {
-      throw new IllegalArgumentException(
-          "El expediente " + this.getNumeroExpediente() + " no contiene la solicitud que se quiere eliminar.");
-    }
   }
 
 }

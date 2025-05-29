@@ -16,6 +16,7 @@ public abstract class SolicitudImpl implements Solicitud {
   private LocalDate fechaFin;
   private String telefonoPoc;
   private String cargoEnLaUnidadPoc;
+  private String emailPoc;
   private boolean pagaSecres;
 //  private Reservista reservista;
 //  private Expediente expediente;
@@ -121,6 +122,15 @@ public abstract class SolicitudImpl implements Solicitud {
 
   public void setCargoEnLaUnidadPoc(String cargoEnLaUnidadPoc) {
     this.cargoEnLaUnidadPoc = cargoEnLaUnidadPoc;
+  }
+  
+  @Override
+  public String getEmailPoc() {
+    return emailPoc;
+  }
+  
+  public void setEmailPoc(String emailPoc) {
+    this.emailPoc = emailPoc;
   }
 
   @Override

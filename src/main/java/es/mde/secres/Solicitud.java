@@ -4,8 +4,7 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
 /**
- * Interfaz que representa una solicitud genérica con atributos y métodos
- * comunes.
+ * Interfaz que representa una solicitud genérica con atributos y métodos comunes.
  */
 public interface Solicitud {
 
@@ -57,30 +56,32 @@ public interface Solicitud {
    * @return la fecha de finalización.
    */
   LocalDate getFechaFin();
-  
+
   Reservista getReservista();
-  
+
   String getTelefonoPoc();
-  
+
   String getCargoEnLaUnidadPoc();
-  
+
+  String getEmailPoc();
+
   boolean isPagaSecres();
 
   void setPagaSecres(boolean pagaSecres);
-  
-//  Expediente getExpediente();
-//  
-//  void setExpediente(Expediente expediente);
 
-  /**
-   * Calcula el coste de la solicitud en función de su duración.
-   *
-   * @return el coste de la solicitud.
-   */
-  default int getCosteCentimos() {
-    long duracion = ChronoUnit.DAYS.between(getFechaInicio(), getFechaFin()) + 1;
-    return Math.toIntExact(duracion * getReservista().getCosteDiaCentimos());
-  }
+  // Expediente getExpediente();
+  //
+  // void setExpediente(Expediente expediente);
+
+  // /**
+  // * Calcula el coste de la solicitud en función de su duración.
+  // *
+  // * @return el coste de la solicitud.
+  // */
+  // default int getCosteCentimos() {
+  // long duracion = ChronoUnit.DAYS.between(getFechaInicio(), getFechaFin()) + 1;
+  // return Math.toIntExact(duracion * getReservista().getCosteDiaCentimos());
+  // }
 
   /**
    * Obtiene el tipo de solicitud basado en el nombre de la clase.
@@ -97,7 +98,12 @@ public interface Solicitud {
     } else if (nombreClase.contains("ActivacionAmpliada")) {
       tipoSolicitud = "EX";
     }
+
     return tipoSolicitud;
+  }
+  
+  default int getDiasDuracion() {
+    return Math.toIntExact(ChronoUnit.DAYS.between(getFechaInicio(), getFechaFin()) + 1);
   }
 
 }

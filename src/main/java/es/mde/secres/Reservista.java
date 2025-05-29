@@ -169,8 +169,8 @@ public class Reservista {
     this.subdelegacionDefensa = subdelegacionDefensa;
   }
 
-  public int getCosteDiaCentimos() {
-    return Integer.parseInt(Propiedades.getCostePorDiaCentimos().getProperty(getEmpleo()));
-  }
+//  public int getCosteDiaCentimos() {
+//    return Integer.parseInt(Propiedades.getCostePorDiaCentimos().getProperty(getEmpleo()));
+//  }
 
 }

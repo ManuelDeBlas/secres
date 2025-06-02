@@ -82,6 +82,10 @@ public interface Solicitud {
   // long duracion = ChronoUnit.DAYS.between(getFechaInicio(), getFechaFin()) + 1;
   // return Math.toIntExact(duracion * getReservista().getCosteDiaCentimos());
   // }
+  
+  int getCosteCentimos();
+  
+  void setCosteCentimos(int costeCentimos);
 
   /**
    * Obtiene el tipo de solicitud basado en el nombre de la clase.

@@ -18,8 +18,6 @@ public abstract class SolicitudImpl implements Solicitud {
   private String cargoEnLaUnidadPoc;
   private String emailPoc;
   private boolean pagaSecres;
-//  private Reservista reservista;
-//  private Expediente expediente;
 
   /**
    * Obtiene el nombre de la UCO asociada a la solicitud.
@@ -97,15 +95,6 @@ public abstract class SolicitudImpl implements Solicitud {
     this.fechaFin = fechaFin;
   }
 
-//  @Override
-//  public Reservista getReservista() {
-//    return reservista;
-//  }
-//
-//  public void setReservista(Reservista reservista) {
-//    this.reservista = reservista;
-//  }
-
   @Override
   public String getTelefonoPoc() {
     return telefonoPoc;
@@ -142,15 +131,6 @@ public abstract class SolicitudImpl implements Solicitud {
   public void setPagaSecres(boolean pagaSecres) {
     this.pagaSecres = pagaSecres;
   }
-
-//  @Override
-//  public Expediente getExpediente() {
-//    return expediente;
-//  }
-//
-//  public void setExpediente(Expediente expediente) {
-//    this.expediente = expediente;
-//  }
 
   /**
    * Constructor por defecto de la clase {@code SolicitudImpl}.

@@ -20,14 +20,6 @@ public interface FormacionContinuada extends Solicitud {
    */
   String getEscala();
 
-//  @Override
-//  default int getCosteCentimos() {
-//    int costeCentimos = 0;
-//    int smi = Integer.parseInt(Propiedades.getUtils().getProperty("smi-centimos"));
-//    float cantidadSmi = Float.parseFloat(Propiedades.getUtils().getProperty(getEscala()));
-//    costeCentimos = (int) (smi * cantidadSmi);
-//    return costeCentimos;
-//  }
   
   default float getDuracionMeses() {
     Period periodo = Period.between(getFechaInicio(), getFechaFin());

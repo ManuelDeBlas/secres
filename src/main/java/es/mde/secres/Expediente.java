@@ -57,17 +57,9 @@ public class Expediente {
 // *
 // * @param tipoSolicitud el tipo de solicitud a establecer.
 // */
-//public void setTipoSolicitud(String tipoSolicitud) {
-//  this.tipoSolicitud = tipoSolicitud;
-//}
-
   public Collection<Solicitud> getSolicitudes() {
     return solicitudes;
   }
-
-//  public void setSolicitudes(Collection<Solicitud> solicitudes) {
-//    this.solicitudes = solicitudes;
-//  }
 
   /**
    * Constructor por defecto de la clase Expediente.

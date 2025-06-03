@@ -65,9 +65,9 @@ public class Expediente {
     return solicitudes;
   }
 
-  public void setSolicitudes(Collection<Solicitud> solicitudes) {
-    this.solicitudes = solicitudes;
-  }
+//  public void setSolicitudes(Collection<Solicitud> solicitudes) {
+//    this.solicitudes = solicitudes;
+//  }
 
   /**
    * Constructor por defecto de la clase Expediente.

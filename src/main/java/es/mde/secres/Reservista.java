@@ -20,7 +20,7 @@ public class Reservista {
   private String telefonoParticular;
   private LocalDate fechaFinCompromiso;
   private LocalDate fechaCaducidadReconocimientoMedico;
-  private int diasConsumidos;
+  // private int diasConsumidos;
   private String localidadResidencia;
   private String subdelegacionDefensa;
   private Collection<Solicitud> solicitudes = new ArrayList<Solicitud>();
@@ -102,12 +102,24 @@ public class Reservista {
 
   /**
    * Obtiene el número de días consumidos por el reservista.
+   * @param anho 
    *
    * @return el número de días consumidos.
    */
-  public int getDiasConsumidos() {
+  public int getDiasConsumidos(int anho) {
+    int diasConsumidos = 0;
+    for (Solicitud solicitud : getSolicitudes()) {
+      if (solicitud.getFechaInicio().getYear() == anho) {
+        diasConsumidos += solicitud.getDiasDuracion();
+      }
+    }
+
     return diasConsumidos;
   }
+
+  // public void setDiasConsumidos(int diasConsumidos) {
+  // this.diasConsumidos = diasConsumidos;
+  // }
 
   /**
    * Obtiene la localidad de residencia del reservista.
@@ -155,8 +167,8 @@ public class Reservista {
    * @param subdelegacionDefensa la subdelegación de defensa.
    */
   public Reservista(String nombre, String apellido1, String apellido2, String empleo, String dni,
-      String telefonoParticular, LocalDate fechaFinCompromiso, int diasConsumidos,
-      String localidadResidencia, String subdelegacionDefensa) {
+      String telefonoParticular, LocalDate fechaFinCompromiso, String localidadResidencia,
+      String subdelegacionDefensa) {
     this.nombre = nombre;
     this.apellido1 = apellido1;
     this.apellido2 = apellido2;
@@ -164,13 +176,12 @@ public class Reservista {
     this.dni = dni;
     this.telefonoParticular = telefonoParticular;
     this.fechaFinCompromiso = fechaFinCompromiso;
-    this.diasConsumidos = diasConsumidos;
     this.localidadResidencia = localidadResidencia;
     this.subdelegacionDefensa = subdelegacionDefensa;
   }
 
-//  public int getCosteDiaCentimos() {
-//    return Integer.parseInt(Propiedades.getCostePorDiaCentimos().getProperty(getEmpleo()));
-//  }
+  // public int getCosteDiaCentimos() {
+  // return Integer.parseInt(Propiedades.getCostePorDiaCentimos().getProperty(getEmpleo()));
+  // }
 
 }

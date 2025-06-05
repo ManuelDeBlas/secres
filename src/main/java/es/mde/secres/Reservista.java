@@ -3,7 +3,7 @@ package es.mde.secres;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
-
+import es.mde.secres.Solicitud.Estados;
 import importadores.Propiedades;
 
 /**
@@ -102,14 +102,17 @@ public class Reservista {
 
   /**
    * Obtiene el número de días consumidos por el reservista.
-   * @param anho 
+   * 
+   * @param anho
    *
    * @return el número de días consumidos.
    */
   public int getDiasConsumidos(int anho) {
     int diasConsumidos = 0;
     for (Solicitud solicitud : getSolicitudes()) {
-      if (solicitud.getFechaInicio().getYear() == anho) {
+      if (solicitud.getFechaInicio().getYear() == anho
+          && (solicitud.getEstado().equals(Estados.ACEPTADA_PENDIENTE_PUBLICACION)
+              || solicitud.getEstado().equals(Estados.PUBLICADA))) {
         diasConsumidos += solicitud.getDiasDuracion();
       }
     }

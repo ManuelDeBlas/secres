@@ -18,6 +18,7 @@ public abstract class SolicitudImpl implements Solicitud {
   private String cargoEnLaUnidadPoc;
   private String emailPoc;
   private boolean pagaSecres;
+  private int costeCentimos;
 
   /**
    * Obtiene el nombre de la UCO asociada a la solicitud.
@@ -130,6 +131,16 @@ public abstract class SolicitudImpl implements Solicitud {
   @Override
   public void setPagaSecres(boolean pagaSecres) {
     this.pagaSecres = pagaSecres;
+  }
+  
+  @Override
+  public int getCosteCentimos() {
+    return costeCentimos;
+  }
+  
+  @Override
+  public void setCosteCentimos(int costeCentimos) {
+    this.costeCentimos = costeCentimos;
   }
 
   /**

@@ -23,7 +23,6 @@ public class Expediente {
 
   private String numeroExpediente;
   private String estado;
-//  private String tipoSolicitud;
   private Collection<Solicitud> solicitudes = new ArrayList<Solicitud>();
 
   /**

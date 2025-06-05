@@ -20,7 +20,6 @@ public class Reservista {
   private String telefonoParticular;
   private LocalDate fechaFinCompromiso;
   private LocalDate fechaCaducidadReconocimientoMedico;
-  // private int diasConsumidos;
   private String localidadResidencia;
   private String subdelegacionDefensa;
   private Collection<Solicitud> solicitudes = new ArrayList<Solicitud>();
@@ -120,10 +119,6 @@ public class Reservista {
     return diasConsumidos;
   }
 
-  // public void setDiasConsumidos(int diasConsumidos) {
-  // this.diasConsumidos = diasConsumidos;
-  // }
-
   /**
    * Obtiene la localidad de residencia del reservista.
    *
@@ -182,9 +177,5 @@ public class Reservista {
     this.localidadResidencia = localidadResidencia;
     this.subdelegacionDefensa = subdelegacionDefensa;
   }
-
-  // public int getCosteDiaCentimos() {
-  // return Integer.parseInt(Propiedades.getCostePorDiaCentimos().getProperty(getEmpleo()));
-  // }
 
 }

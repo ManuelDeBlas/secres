@@ -69,19 +69,6 @@ public interface Solicitud {
 
   void setPagaSecres(boolean pagaSecres);
 
-  // Expediente getExpediente();
-  //
-  // void setExpediente(Expediente expediente);
-
-  // /**
-  // * Calcula el coste de la solicitud en función de su duración.
-  // *
-  // * @return el coste de la solicitud.
-  // */
-  // default int getCosteCentimos() {
-  // long duracion = ChronoUnit.DAYS.between(getFechaInicio(), getFechaFin()) + 1;
-  // return Math.toIntExact(duracion * getReservista().getCosteDiaCentimos());
-  // }
   
   int getCosteCentimos();
   

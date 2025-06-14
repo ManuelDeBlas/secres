@@ -1,7 +1,5 @@
 package importadores;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -18,7 +16,6 @@ public class Propiedades {
   private static Properties tiempoMaximoActivacion = new Properties();
 
   static {
-
     try (var input = Propiedades.class.getClassLoader().getResourceAsStream("tiempo-maximo-activacion.properties")) {
       if (input != null) {
         tiempoMaximoActivacion.load(input);

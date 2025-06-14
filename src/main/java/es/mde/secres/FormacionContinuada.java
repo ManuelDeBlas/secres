@@ -1,7 +1,6 @@
 package es.mde.secres;
 
 import java.time.Period;
-import com.google.common.base.Objects;
 
 import importadores.Propiedades;
 

@@ -1,7 +1,6 @@
 package es.mde.secres;
 
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 
 /**
  * Implementación abstracta de la interfaz {@link Solicitud}, que representa una

@@ -3,8 +3,8 @@ package es.mde.secres;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
+
 import es.mde.secres.Solicitud.Estados;
-import importadores.Propiedades;
 
 /**
  * Implementación de la interfaz {@link Reservista}, que representa a un reservista con información

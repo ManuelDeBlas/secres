@@ -2,11 +2,8 @@ package es.mde.secres;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import es.mde.secres.Solicitud.Estados;
 
 /**
  * Representa un expediente que contiene información sobre el número de
